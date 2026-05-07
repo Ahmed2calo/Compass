@@ -1,24 +1,6 @@
-import React, { useEffect } from "react";
-import { Link } from "react-scroll";
-import gsap from "gsap";
+import React from "react";
 
 const Navbar: React.FC = () => {
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(".nav-item", {
-        opacity: 0,
-        y: -30,
-        filter: "blur(8px)",
-        stagger: 0.12,
-        duration: 1,
-        ease: "power4.out",
-        delay: 0.2,
-      });
-    });
-
-    return () => ctx.revert();
-  }, []);
-
   return (
     <nav className="bg-white/80 backdrop-blur-md text-gray-800 fixed w-full top-0 z-50 shadow-md border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -31,35 +13,25 @@ const Navbar: React.FC = () => {
         {/* Links */}
         <div className="hidden md:flex space-x-8 items-center">
 
-          <Link to="home" smooth duration={500}
-            className="nav-item cursor-pointer hover:text-blue-600 transition"
-          >
+          <a href="#home" className="hover:text-blue-600 transition">
             Home
-          </Link>
+          </a>
 
-          <Link to="about" smooth duration={500}
-            className="nav-item cursor-pointer hover:text-blue-600 transition"
-          >
+          <a href="#about" className="hover:text-blue-600 transition">
             About
-          </Link>
+          </a>
 
-          <Link to="work" smooth duration={500}
-            className="nav-item cursor-pointer hover:text-blue-600 transition"
-          >
+          <a href="#work" className="hover:text-blue-600 transition">
             Work
-          </Link>
+          </a>
 
-          <Link to="projects" smooth duration={500}
-            className="nav-item cursor-pointer hover:text-blue-600 transition"
-          >
+          <a href="#projects" className="hover:text-blue-600 transition">
             Projects
-          </Link>
+          </a>
 
-          <Link to="contact" smooth duration={500}
-            className="nav-item cursor-pointer hover:text-blue-600 transition"
-          >
+          <a href="#contact" className="hover:text-blue-600 transition">
             Contact
-          </Link>
+          </a>
 
         </div>
 
